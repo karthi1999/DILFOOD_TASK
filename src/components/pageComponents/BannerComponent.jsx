@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 const BannerComponent = () => {
     return (
-        <div className='w-full h-80 md:h-96 lg:h-screen flex align-items-center relative  bg-gray-50 overflow-hidden'>
+        <div className='w-full h-80 md:h-96 lg:h-screen flex items-center relative  bg-gray-50 overflow-hidden'>
             <div className='w-2/12 lg:w-1/3 h-full bg-red-500'></div>
             <div className='md:absolute lg:left-4 flex h-full justify-center items-center w-full'>
                 <div className='hidden lg:block p-6 md:letter-spacing-3 lg:pt-10 lg:letter-spacing-4 px-6 rounded-md text-center bg-white'>

@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
-import datas from '../utilities/sampledata.json';
+import React, { memo, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const ProductListComponent = (
     {
@@ -7,12 +7,11 @@ const ProductListComponent = (
         addCartHandler,
     }
 ) => {
-    const flipFrontCard = (cardIndex) => {
-        document.getElementById(cardIndex).classList.add("flipcard")
-    }
-    const flipBackCard = (cardIndex) => {
-        document.getElementById(cardIndex).classList.remove("flipcard")
-    }
+    const { productList } = useSelector((state) => state.productsState);
+    const [datas, setDatas] = useState([]);
+    useEffect(() => {
+        setDatas(productList)
+    }, [productList])
     return (
         <>
             <h4 className='w-3/4 mx-auto text-center my-5 mt-10 text-lg font-semibold'>{category.toUpperCase()}</h4>
@@ -27,7 +26,6 @@ const ProductListComponent = (
                             image,
                             price,
                             title,
-                            description,
                             rating: {
                                 rate,
                                 count
@@ -67,7 +65,7 @@ const ProductListComponent = (
                                             <div>
                                                 <button
                                                     type='submit'
-                                                    className="p-2 btn text-white bg-indigo-500 rounded-md"
+                                                    className="p-2 text-white bg-indigo-500 rounded-md"
                                                     onClick={() => addCartHandler(data)}>
                                                     Add Cart
                                                 </button>

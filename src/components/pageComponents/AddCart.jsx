@@ -38,15 +38,13 @@ const AddCart = (
 	}
 
 	return (
-		<div className='fixed w-1/3 bg-gray-100 top-16 right-0 p-2 -mt-2 h-full'>
+		<div className='fixed w-full sm:w-1/3 bg-gray-100 top-16 right-0 p-2 h-full'>
 			<div onClick={() => clickHandler()}>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 cursor-pointer">
 					<path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
 				</svg>
 			</div>
-
-			<i className="fa-solid fa-xmark p-4 text-end w-100 pb-2"></i>
-			<p className='w-3/4 mx-auto text-center'>Your Cart</p>
+			<p className='w-3/4 mx-auto text-center pb-3'>Your Cart</p>
 			<hr className='w-3/4 mx-auto' />
 			<div className='h-3/4 overflow-y-auto flex flex-col items-center mb-2'>
 				{
